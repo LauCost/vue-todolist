@@ -19,13 +19,23 @@
 
         <input type="text" v-model="newTasks">
         <button @click="addNewTask">Add Task</button>
+        <p v-show="errore">Devi aggiungere una nuova task</p>
 
-        <div v-for="(task, i) in tasks">
+        <div v-if="tasks.length > 0">
 
-            <p>{{task}}</p>
+            <div v-for="(task, i) in tasks">
 
-            <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
+                <p>{{task}}</p>
 
+                <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
+
+            </div>
+
+        </div>
+        <div v-else>
+            <p>
+                Non ci sono più tasks da fare
+            </p>
         </div>
     </div>
 

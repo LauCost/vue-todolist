@@ -12,15 +12,17 @@ const vueApp = new Vue({
             "Fare esercizi",
             "Riposare",
             "Giocare"
-        ]
+        ],
+
+        errore: false
     },
 
     methods: {
 
         deleteTask(i) {
-            console.log(i);
+            /* console.log(i); */
 
-            this.tasks.splice(i, 1)
+            this.tasks.splice(i, 1);
         },
 
         addNewTask() {
@@ -29,12 +31,17 @@ const vueApp = new Vue({
 
             if (this.newTasks != '' && this.newTasks.length > 5) {
 
-                this.tasks.push(this.newTasks)
+                this.tasks.push(this.newTasks);
+
+                this.errore = false;
             } else {
-                alert("Ciao")
+
+                this.errore = true;
+
             }
 
-            this.newTasks = ""
+            this.newTasks = "";
+
         }
     }
 })
