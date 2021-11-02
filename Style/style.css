@@ -57,12 +57,19 @@ button{
 .task{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #DADEE1;
 
 }
 
-h3{
-    margin: 10px auto;
+.titolo_delete{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+p{
+    margin: 10px 0;
 }
 /* /Contenuto della cont_task */

@@ -22,13 +22,13 @@
             <img src="http://boolean.careers/images/misc/logo.png" alt="">
             <div class="cont_add">
 
-                <input type="text" v-model="newTasks" placeholder="Nuova task">
+                <input type="text" v-model="newTasks" placeholder="Nuova task" @keyup.enter="addNewTask">
                 <button @click="addNewTask">Aggiungi</button>
                 <p class="errore" v-show="errore">Devi aggiungere una nuova task</p>
             </div>
         </div>
 
-        <!-- Contenitore delle task da svolgere -->
+        <!-- Contenitore delle Task da Svolgere -->
         <div class="cont_tasks" v-if="tasks.length > 0">
 
             <div class="task" v-for="(task, i) in tasks">
@@ -37,10 +37,7 @@
 
                 <div class="icone">
 
-                    <span @click="taskComplite(i)">
-                        <i class="fas fa-check"></i>
-
-                    </span>
+                    <i class="fas fa-check" @click="taskComplite(i)"></i>
 
                     <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
                 </div>
@@ -56,11 +53,17 @@
             </p>
         </div>
 
+        <!-- Contenitore del Cestino -->
         <div class="cont_tasks" v-if="tasksDeleted.length > 0">
+            <div class="titolo_delete">
 
-            <h3>
-                Task Eliminate
-            </h3>
+                <h3>
+                    Task Eliminate
+                </h3>
+
+                <a href="#" @click="deleteAll">(Delete All)</a>
+            </div>
+
 
             <div class="task" v-for="(taskDeleted, i) in tasksDeleted">
 
@@ -75,6 +78,7 @@
 
         </div>
 
+        <!-- Non ci sono task eliminate -->
         <div class="cont_tasks" v-else>
 
             <h3>
@@ -86,6 +90,29 @@
             </p>
         </div>
 
+        <!-- Contenitore Task Completate -->
+        <div class="cont_tasks" v-if="tasksComplete.length > 0">
+
+            <div class="task" v-for="(taskComplete, i) in tasksComplete">
+
+                <p>{{taskComplete}}</p>
+
+                <div class="icone">
+
+                    <i class="fas fa-undo" @click="ritorna(i)"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Non ci sono Task Completate -->
+        <div class="cont_tasks" v-else>
+            <p>
+                Non ci sono task completate
+            </p>
+        </div>
 
     </div>
 
