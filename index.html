@@ -17,11 +17,14 @@
 
     <div id="data">
 
+        <input type="text" v-model="newTasks">
+        <button @click="addNewTask">Add Task</button>
+
         <div v-for="(task, i) in tasks">
 
             <p>{{task}}</p>
 
-            <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
+            <i class="fas fa-times-circle" @click="deleteTask"></i>
 
         </div>
     </div>
