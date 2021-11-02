@@ -38,6 +38,11 @@ const vueApp = new Vue({
 
         },
 
+        elimina(i) {
+
+            this.tasksDeleted.splice(i, 1);
+        },
+
         addNewTask() {
 
             /* console.log("Aggiungi task"); */
