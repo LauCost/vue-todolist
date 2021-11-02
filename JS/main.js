@@ -11,5 +11,14 @@ const vueApp = new Vue({
             "Riposare",
             "Giocare"
         ]
+    },
+
+    methods: {
+
+        deleteTask(i) {
+            console.log(i);
+
+            this.tasks.splice(i, 1)
+        }
     }
 })
