@@ -48,7 +48,7 @@ button{
     display: flex;
     flex-direction: column;
     width: 30%;
-    margin: auto;
+    margin: 20px auto;
     background-color: #F5F7F7;
     border-radius: 10px;
     padding: 30px 25px;
@@ -60,5 +60,9 @@ button{
     padding: 10px 0;
     border-bottom: 1px solid #DADEE1;
 
+}
+
+h3{
+    margin: 10px auto;
 }
 /* /Contenuto della cont_task */

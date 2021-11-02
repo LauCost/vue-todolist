@@ -45,10 +45,7 @@
                     <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
                 </div>
 
-
             </div>
-
-
 
         </div>
 
@@ -56,6 +53,36 @@
         <div class="cont_tasks" v-else>
             <p>
                 Non ci sono più tasks da fare
+            </p>
+        </div>
+
+        <div class="cont_tasks" v-if="tasksDeleted.length > 0">
+
+            <h3>
+                Task Eliminate
+            </h3>
+
+            <div class="task" v-for="(taskDeleted, i) in tasksDeleted">
+
+                <p>{{taskDeleted}}</p>
+
+                <div class="icone">
+
+                    <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="cont_tasks" v-else>
+
+            <h3>
+                Task Eliminate
+            </h3>
+
+            <p>
+                Non ci sono task eliminate
             </p>
         </div>
 

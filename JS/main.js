@@ -6,6 +6,8 @@ const vueApp = new Vue({
 
         newTasks: "",
 
+        tasksDeleted: [],
+
         tasks: [
 
             "Studiare",
@@ -29,7 +31,11 @@ const vueApp = new Vue({
         deleteTask(i) {
             /* console.log(i); */
 
+            this.tasksDeleted.push(this.tasks[i]);
+
             this.tasks.splice(i, 1);
+
+
         },
 
         addNewTask() {
