@@ -1,3 +1,64 @@
-.verde{
-    color: green;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+/* Contenuto della add_task */
+.add_tasks{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+img{
+    width: 20%;
+}
+
+.cont_add{
+    margin: 30px 0;
+}
+
+input{
+    padding: 7px 17px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+button{
+    padding: 7px 17px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin-left: 10px;
+}
+
+.errore{
+    margin: 10px 0;
+}
+/* /Contenuto della add_task */
+
+
+
+
+/* Contenuto della cont_task */
+.cont_tasks{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    background-color: #F5F7F7;
+    border-radius: 10px;
+    padding: 30px 25px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #DADEE1;
+
+}
+/* /Contenuto della cont_task */

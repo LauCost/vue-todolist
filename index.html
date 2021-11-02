@@ -17,31 +17,49 @@
 
     <div id="data">
 
-        <input type="text" v-model="newTasks">
-        <button @click="addNewTask">Add Task</button>
-        <p v-show="errore">Devi aggiungere una nuova task</p>
+        <!-- Titolo, input e bottone per aggiungere nuove task -->
+        <div class="add_tasks">
+            <img src="http://boolean.careers/images/misc/logo.png" alt="">
+            <div class="cont_add">
 
-        <div v-if="tasks.length > 0">
+                <input type="text" v-model="newTasks" placeholder="Nuova task">
+                <button @click="addNewTask">Aggiungi</button>
+                <p class="errore" v-show="errore">Devi aggiungere una nuova task</p>
+            </div>
+        </div>
 
-            <div v-for="(task, i) in tasks">
+        <!-- Contenitore delle task da svolgere -->
+        <div class="cont_tasks" v-if="tasks.length > 0">
+
+            <div class="task" v-for="(task, i) in tasks">
 
                 <p>{{task}}</p>
 
-                <span @click="taskComplite(i)">
-                    <i class="fas fa-check"></i>
+                <div class="icone">
 
-                </span>
+                    <span @click="taskComplite(i)">
+                        <i class="fas fa-check"></i>
 
-                <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
+                    </span>
+
+                    <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
+                </div>
+
 
             </div>
 
+
+
         </div>
-        <div v-else>
+
+        <!-- Non ci sono task da svolgere -->
+        <div class="cont_tasks" v-else>
             <p>
                 Non ci sono più tasks da fare
             </p>
         </div>
+
+
     </div>
 
     <script src="./JS/main.js"></script>
