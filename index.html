@@ -31,6 +31,10 @@
         <!-- Contenitore delle Task da Svolgere -->
         <div class="cont_tasks" v-if="tasks.length > 0">
 
+            <h3>
+                Task Da Svolgere
+            </h3>
+
             <div class="task" v-for="(task, i) in tasks">
 
                 <p>{{task}}</p>
@@ -48,6 +52,11 @@
 
         <!-- Non ci sono task da svolgere -->
         <div class="cont_tasks" v-else>
+
+            <h3>
+                Task Da Svolgere
+            </h3>
+
             <p>
                 Non ci sono più tasks da fare
             </p>
@@ -93,6 +102,10 @@
         <!-- Contenitore Task Completate -->
         <div class="cont_tasks" v-if="tasksComplete.length > 0">
 
+            <h3>
+                Task Completate
+            </h3>
+
             <div class="task" v-for="(taskComplete, i) in tasksComplete">
 
                 <p>{{taskComplete}}</p>
@@ -109,6 +122,11 @@
 
         <!-- Non ci sono Task Completate -->
         <div class="cont_tasks" v-else>
+
+            <h3>
+                Task Completate
+            </h3>
+
             <p>
                 Non ci sono task completate
             </p>

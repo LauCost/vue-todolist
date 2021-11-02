@@ -6,8 +6,10 @@ const vueApp = new Vue({
 
         newTasks: "",
 
+        //Array vuoto per le task cancellate
         tasksDeleted: [],
 
+        //Array vuoto per le task completate
         tasksComplete: [],
 
         tasks: [
@@ -24,6 +26,7 @@ const vueApp = new Vue({
 
     methods: {
 
+        //Funzione per assegnare le tasks completate all suo array 
         taskComplite(i) {
 
             this.tasksComplete.push(this.tasks[i]);
@@ -32,6 +35,7 @@ const vueApp = new Vue({
 
         },
 
+        //Funzione per assegnare le tasks eliminate all suo array
         deleteTask(i) {
             /* console.log(i); */
 
@@ -42,16 +46,19 @@ const vueApp = new Vue({
 
         },
 
+        //Funzione per eliminare una task specifica dal cestino
         elimina(i) {
 
             this.tasksDeleted.splice(i, 1);
         },
 
+        //Funzione per eliminare tutte le task insieme dal cestino
         deleteAll() {
 
             this.tasksDeleted = [];
         },
 
+        //Funzione per riassegniare la task completata all'array delle tasks da svolgere
         ritorna(i) {
 
             this.tasks.push(this.tasksComplete[i]);
@@ -60,6 +67,7 @@ const vueApp = new Vue({
 
         },
 
+        //Funzione che aggiunge una nuova task all'array tasks
         addNewTask() {
 
             /* console.log("Aggiungi task"); */
