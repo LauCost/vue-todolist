@@ -14,10 +14,17 @@ const vueApp = new Vue({
             "Giocare"
         ],
 
-        errore: false
+        errore: false,
+
     },
 
     methods: {
+
+        taskComplite(i) {
+
+            console.log(i);
+
+        },
 
         deleteTask(i) {
             /* console.log(i); */

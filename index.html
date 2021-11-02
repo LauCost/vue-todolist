@@ -27,6 +27,11 @@
 
                 <p>{{task}}</p>
 
+                <span @click="taskComplite(i)">
+                    <i class="fas fa-check"></i>
+
+                </span>
+
                 <i class="fas fa-times-circle" @click="deleteTask(i)"></i>
 
             </div>
